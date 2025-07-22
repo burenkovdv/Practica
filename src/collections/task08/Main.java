@@ -1,4 +1,4 @@
-package task08;
+package collections.task08;
 
 import java.util.*;
 
