@@ -1,4 +1,4 @@
-package task01;
+package collections.task01;
 
 import java.util.HashSet;
 import java.util.List;
