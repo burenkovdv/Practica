@@ -1,5 +1,10 @@
 package sorting.task02;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class Product implements Comparable<Product> {
     private String name;
     private double price;
@@ -15,22 +20,6 @@ public class Product implements Comparable<Product> {
             return this.getName().compareTo(o.getName());
         }
         return Double.compare(this.getPrice(), o.getPrice());
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     @Override
