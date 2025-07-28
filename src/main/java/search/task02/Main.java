@@ -27,22 +27,21 @@ public class Main {
             T key
     ) {
 
-        int start = 0;
-        int end = list.size();
-        int mid = end / 2;
-
-        for (int i = 0; i < end; i++) {
-            if(list.get(mid)==key){
+        int low = 0;
+        int high = list.size() - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            T midVal = list.get(mid);
+            int cmp = midVal.compareTo(key);
+            if (cmp < 0) {
+                low = mid + 1;
+            } else if (cmp > 0) {
+                high = mid - 1;
+            } else {
                 return mid;
-            } else if (key.compareTo(list.get(mid))<0) {
-                end=mid;
-                mid=end/2+1;
-            }
-            else {
-                start=mid;
-                mid=mid+(end-start)/2;
             }
         }
-            return (mid+2)*-1;
+        // key not found => insertion point = low
+        return -low - 1;
     }
 }
