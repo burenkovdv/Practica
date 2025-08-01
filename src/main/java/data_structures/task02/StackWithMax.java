@@ -9,7 +9,7 @@ public class StackWithMax<T extends Comparable<? super T>> {
 
     void push(T value) {
         mainStack.push(value);
-        if(maxStack.isEmpty() || value.compareTo(maxStack.peek())>0){
+        if (maxStack.isEmpty() || value.compareTo(maxStack.peek()) > 0) {
             maxStack.push(value);
             return;
         }
@@ -25,10 +25,11 @@ public class StackWithMax<T extends Comparable<? super T>> {
         return mainStack.peek();
     }
 
-    public T getMax(){
+    public T getMax() {
         return maxStack.peek();
     }
-    public boolean isEmpty () {
+
+    public boolean isEmpty() {
         return mainStack.isEmpty();
     }
 

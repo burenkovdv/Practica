@@ -1,29 +1,30 @@
 package data_structures.task01;
 
+import java.util.NoSuchElementException;
 import java.util.Stack;
 
 public class MinStack<T extends Comparable<? super T>> {
     private Stack<T> mainStack = new Stack<>();
-    private T minimum;
+    private Stack<T> minStack = new Stack<>();
+    //private T minimum;
 
     /**
      * Добавляет элемент на вершину стека
      */
     public void push(T value) {
         mainStack.push(value);
-        if (minimum == null) {
-            minimum = value;
+        if (minStack.isEmpty() || value.compareTo(minStack.peek()) <= 0) {
+            minStack.push(value);
             return;
         }
-        if (minimum.compareTo(value) > 0) {
-            minimum = value;
-        }
+        minStack.push(minStack.peek());
     }
 
     /**
      * Удаляет и возвращает верхний элемент; если пуст, бросает NoSuchElementException
      */
     public T pop() {
+        minStack.pop();
         return mainStack.pop();
     }
 
@@ -31,6 +32,7 @@ public class MinStack<T extends Comparable<? super T>> {
      * Смотрит верхний элемент без удаления; если пуст, бросает NoSuchElementException
      */
     public T peek() {
+        checkStack();
         return mainStack.peek();
     }
 
@@ -38,7 +40,8 @@ public class MinStack<T extends Comparable<? super T>> {
      * Возвращает минимальный элемент среди всех в стеке без удаления; если пуст, бросает NoSuchElementException
      */
     public T getMin() {
-        return minimum;
+        checkStack();
+        return minStack.peek();
     }
 
     /**
@@ -47,4 +50,12 @@ public class MinStack<T extends Comparable<? super T>> {
     public int size() {
         return mainStack.size();
     }
+
+    void checkStack() {
+        if (mainStack.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+    }
+
+
 }

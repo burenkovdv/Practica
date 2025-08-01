@@ -19,7 +19,7 @@ class AgeComparatorTest {
         ));
        people.sort(new AgeComparator());
 
-       assertEquals("Bob", people.getFirst().getName());
+       assertEquals("Bob", people.get(0).getName());
        assertEquals("Alice", people.get(1).getName());
     }
 }
