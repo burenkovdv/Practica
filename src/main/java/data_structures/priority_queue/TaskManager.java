@@ -50,10 +50,7 @@ public class TaskManager {
      * @return задача или null, если пусто
      */
     public Task pollNext() {
-        if (queue.isEmpty()) {
-            return null;
-        }
-        return queue.remove();
+        return queue.poll();
     }
 
     /**
