@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<String> words = List.of("apple", "bee", "car", "door", "elephant", "fox");
-        List<Integer> list = filterAndTransform(words, x -> x.length() <= 3, String::length);
+        List<Integer> list = filterAndTransform(words, x -> x.length() > 3, String::length);
         list.forEach(System.out::println);
 
         List<String> list1 = filterAndTransform(words, x -> x.charAt(0) == 'b' || x.charAt(0) == 'f',
