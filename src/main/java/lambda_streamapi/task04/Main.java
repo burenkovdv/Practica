@@ -13,8 +13,6 @@ public class Main {
         List<String> list1 = filterAndTransform(words, x -> !x.substring(0, 1).contains("b") && !x.substring(0, 1).contains("f"),
                 String::toUpperCase);
         list1.forEach(System.out::println);
-
-
     }
 
     public static <T, R> List<R> filterAndTransform(
