@@ -18,9 +18,8 @@ public class GroupingTask {
     }
 
     public static Map<Integer, List<String>> groupHighGrades(List<Student> students) {
-        Map<Integer, List<String>> result = new HashMap<>();
 
-        result = students.stream()
+        return students.stream()
                 .filter(x -> x.grade >= 75)
                 .collect(Collectors.groupingBy(
                         student -> student.course,
@@ -28,7 +27,6 @@ public class GroupingTask {
                                 s -> s.name + " (" + s.grade + ")",
                                 Collectors.toList()
                         )));
-            return result;
     }
 
     public static void main(String[] args) {
