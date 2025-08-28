@@ -1,16 +1,19 @@
 package lambda_streamapi.homework_1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.ToLongFunction;
 
 public class Main {
     public record Employee(UUID personId, String department, String name, double salary) {
     }
+
+//    public static void main(String[] args) {
+//        Map<String,List<Employee>> input = new HashMap<>();
+//        input.put("Test", List.of(1212,"dep1","Max",150000));
+//    }
+
 
     /**
      * TODO: с помощью стрима нужно:
@@ -24,7 +27,29 @@ public class Main {
      *  5. Сделать так, чтобы в результате была не Map<String, List<Employee>>, а Map<String, List<String>> с именами в списке вместо объектов
      */
     public static Map<String, List<Employee>> rearrange(Map<String, List<Employee>> employeeMap) {
-        throw new UnsupportedOperationException();
+        Map<String, List<Employee>> result = new HashMap<>();
+//        Stream<Map.Entry<String, List<Employee>>> stream = employeeMap.entrySet().stream()
+//                .collect(Collectors.groupingBy(Employee::salary,
+//                        Collectors.groupingBy(Employee::name));
+        try {
+            for (Map.Entry<String, List<Employee>> stringListEntry : employeeMap.entrySet()) {
+                List<Employee> element = stringListEntry.getValue();
+                if (element == null) continue;
+                for (Employee employee : element) {
+                    if (employee.salary >= 50_000 && employee.salary < 150_000) {
+                        result.computeIfAbsent("50k-150k", k -> new ArrayList<>()).add(employee);
+                    } else if (employee.salary >= 150_000 && employee.salary < 300_000) {
+                        result.computeIfAbsent("150k-300k", k -> new ArrayList<>()).add(employee);
+                    } else {
+                        result.computeIfAbsent("300k+", k -> new ArrayList<>()).add(employee);
+                    }
+                }
+            }
+        } catch (NullPointerException e)  {
+
+        }
+
+        return result;
     }
 
     /**
