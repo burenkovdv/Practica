@@ -13,9 +13,7 @@ public class PhoneExtractor {
 
         while (matcher.find()) {
             String group = matcher.group();
-
             result.add(group);
-
         }
 
         return result;
