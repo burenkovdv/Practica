@@ -57,4 +57,29 @@ class UserFinderTest {
 
         assertTrue(result.isEmpty());
     }
+
+    @Test
+    void testNoAdultGmailUsers() {
+        List<UserFinder.User> users = List.of(
+                new UserFinder.User("Ivan", 17, "ivan@gmail.com"),
+                new UserFinder.User("Sergey", 20, "sergey@mail.ru")
+        );
+
+        List<String> result = UserFinder.findAllAdultGmailUserEmails(users);
+
+        assertTrue(result.isEmpty());
+    }
+
+    @Test
+    void testSortingByName() {
+        List<UserFinder.User> users = List.of(
+                new UserFinder.User("Zoya", 21, "zoya@gmail.com"),
+                new UserFinder.User("Anna", 22, "anna@gmail.com"),
+                new UserFinder.User("Pavel", 25, "pavel@gmail.com")
+        );
+
+        List<String> result = UserFinder.findAllAdultGmailUserEmails(users);
+
+        assertEquals(List.of("anna@gmail.com", "pavel@gmail.com", "zoya@gmail.com"), result);
+    }
 }

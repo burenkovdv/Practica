@@ -1,7 +1,9 @@
 package optional.task01;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class UserFinder {
 
@@ -37,5 +39,15 @@ public class UserFinder {
                 .map(User::getEmail)
                 .orElse("Not found");
     }
+
+    public static List<String> findAllAdultGmailUserEmails(List<User> users) {
+        return users.stream().filter(x->x.age>18)
+                .filter(x -> x.email.endsWith("@gmail.com"))
+                .sorted(Comparator.comparing(User::getName))
+                .map(User::getEmail)
+                .collect(Collectors.toList());
+    }
+
+
 }
 
