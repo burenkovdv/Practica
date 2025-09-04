@@ -22,4 +22,12 @@ public class CityFinder {
                 .map(User::getAddress)
                 .map(Address::getCity);
     }
+
+    public static String findUserCityOrDefault(User user, String defaultCity) {
+        return Optional.ofNullable(user)
+                .map(User::getAddress)
+                .map(Address::getCity)
+                .orElse(defaultCity);
+    }
+
 }
