@@ -1,0 +1,38 @@
+[2025-09-04 20:38:17] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 15
+[2025-09-04 20:38:17] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 25
+[2025-09-04 20:38:17] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 15, b = 30
+[2025-09-04 20:38:17] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 0
+[2025-09-04 20:38:17] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 0
+[2025-09-04 20:38:17] [ERROR] [main] logging.task01.CalculatorService - Деление на ноль
+java.lang.ArithmeticException: / by zero
+	at logging.task01.CalculatorService.divide(CalculatorService.java:25)
+	at logging.task01.CalculatorService.main(CalculatorService.java:11)
+[2025-09-04 20:39:16] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 15
+[2025-09-04 20:39:16] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 25
+[2025-09-04 20:39:16] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 15, b = 30
+[2025-09-04 20:39:16] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 0
+[2025-09-04 20:39:16] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 0
+[2025-09-04 20:39:16] [ERROR] [main] logging.task01.CalculatorService - Деление на ноль
+java.lang.ArithmeticException: / by zero
+	at logging.task01.CalculatorService.divide(CalculatorService.java:25)
+	at logging.task01.CalculatorService.main(CalculatorService.java:11)
+[2025-09-04 20:41:47] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 15
+[2025-09-04 20:41:47] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 25
+[2025-09-04 20:41:47] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 15, b = 30
+[2025-09-04 20:41:47] [INFO ] [main] logging.task01.CalculatorService - Результат работы метода = 0
+[2025-09-04 20:41:47] [DEBUG] [main] logging.task01.CalculatorService - Вызов метода с входными параметрами: a = 10, b = 0
+[2025-09-04 20:41:47] [ERROR] [main] logging.task01.CalculatorService - Деление на ноль
+java.lang.ArithmeticException: / by zero
+	at logging.task01.CalculatorService.divide(CalculatorService.java:25)
+	at logging.task01.CalculatorService.main(CalculatorService.java:11)
+[2025-09-04 20:43:12] [DEBUG] [main] logging.task01.CalculatorService.add - Вызов метода с входными параметрами: a = 10, b = 15
+[2025-09-04 20:43:12] [INFO ] [main] logging.task01.CalculatorService.add - Результат работы метода = 25
+[2025-09-04 20:43:12] [DEBUG] [main] logging.task01.CalculatorService.divide - Вызов метода с входными параметрами: a = 15, b = 30
+[2025-09-04 20:43:12] [INFO ] [main] logging.task01.CalculatorService.divide - Результат работы метода = 0
+[2025-09-04 20:43:12] [DEBUG] [main] logging.task01.CalculatorService.divide - Вызов метода с входными параметрами: a = 10, b = 0
+[2025-09-04 20:43:12] [ERROR] [main] logging.task01.CalculatorService.divide - Деление на ноль
+java.lang.ArithmeticException: / by zero
+	at logging.task01.CalculatorService.divide(CalculatorService.java:25)
+	at logging.task01.CalculatorService.main(CalculatorService.java:11)
+[2025-09-04 21:05:19] [INFO ] [main] databases.task01.Main.main - Data: firstname=Jon, lastname=Alexeev, birthdate=2025-06-20
+[2025-09-04 21:05:19] [INFO ] [main] databases.task01.Main.main - Data: firstname=Maxim, lastname=Ivanov, birthdate=2000-06-20

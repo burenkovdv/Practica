@@ -1,5 +1,6 @@
 package optional.task03;
 
+import java.util.List;
 import java.util.Optional;
 
 public class CompanyFinder {
@@ -7,11 +8,22 @@ public class CompanyFinder {
     public static Optional<String> findCompanyName(User user) {
         // TODO: реализовать с помощью Optional.ofNullable + map + flatMap
 
-       return Optional.ofNullable(user)
-               .map(User::getProfile)
-               .map(Profile::getCompany)
-               .flatMap(Company::getName);
+        return Optional.ofNullable(user)
+                .map(User::getProfile)
+                .map(Profile::getCompany)
+                .flatMap(Company::getName);
 
+    }
+
+    public static List<String> findAllCompanyNames(List<User> users) {
+        return users.stream()
+                .map(user -> Optional.ofNullable(user)
+                .map(User::getProfile)
+                .map(Profile::getCompany)
+                .flatMap(Company::getName))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .toList();
     }
 
     // ===================== Models ======================

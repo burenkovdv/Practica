@@ -1,0 +1,17 @@
+[2025-09-08 15:18:23] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Jon, lastname=Alexeev, birthdate=2025-06-20
+[2025-09-08 15:18:23] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Maxim, lastname=Ivanov, birthdate=2000-06-20
+[2025-09-08 15:18:23] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Cristiano, lastname=Ronaldo, birthdate=1985-05-05
+[2025-09-08 15:18:53] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Jon, lastname=Alexeev, birthdate=2025-06-20
+[2025-09-08 15:18:53] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Maxim, lastname=Ivanov, birthdate=2000-06-20
+[2025-09-08 15:18:53] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Cristiano, lastname=Ronaldo, birthdate=1985-05-05
+[2025-09-08 15:19:40] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Jon, lastname=Alexeev, birthdate=2025-06-20
+[2025-09-08 15:19:40] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Maxim, lastname=Ivanov, birthdate=2000-06-20
+[2025-09-08 15:19:40] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Cristiano, lastname=Ronaldo, birthdate=1985-05-05
+[2025-09-08 17:29:22] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Jon, lastname=Alexeev, birthdate=2025-06-20
+[2025-09-08 17:29:22] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Maxim, lastname=Ivanov, birthdate=2000-06-20
+[2025-09-08 17:29:22] [INFO ] [main] databases.task01.Main.main.18 - Data: firstname=Cristiano, lastname=Ronaldo, birthdate=1985-05-05
+[2025-09-08 18:50:36] [INFO ] [main] databases.task01.TransactionService.transferMoney.42 - Rows updated: 2
+[2025-09-08 18:51:05] [ERROR] [main] databases.task01.Main.main.18 - Ошибка при транзакции
+databases.task01.InsufficientFundsException: Account with id = 1 has balance 900 less than 1000
+	at databases.task01.TransactionService.transferMoney(TransactionService.java:25)
+	at databases.task01.Main.main(Main.java:16)
