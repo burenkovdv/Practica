@@ -1,9 +1,0 @@
-[2025-09-12 09:37:53] [ERROR] [main] databases.task01.Main.main.18 - Ошибка при транзакции
-databases.task01.InsufficientFundsException: Account with id = 1 has balance 900 less than 1000
-	at databases.task01.TransactionService.transferMoney(TransactionService.java:25)
-	at databases.task01.Main.main(Main.java:16)
-[2025-09-12 09:39:59] [ERROR] [main] databases.task01.Main.main.18 - Ошибка при транзакции
-databases.task01.InsufficientFundsException: Account with id = 1 has balance 900 less than 1000
-	at databases.task01.TransactionService.transferMoney(TransactionService.java:25)
-	at databases.task01.Main.main(Main.java:16)
-[2025-09-12 09:41:27] [INFO ] [main] databases.task01.TransactionService.transferMoney.42 - Rows updated: 2
