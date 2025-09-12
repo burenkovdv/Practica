@@ -7,16 +7,16 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AgeComparatorTest {
+public class AgeComparatorTest {
 
     @Test
-    void testComparator_success() {
+    public void testComparator_success() {
        var people = new ArrayList<>(List.of(
-                new Person("Alice", 30),
-                new Person("Bob",   25),
-                new Person("Alice", 25),
-                new Person("Charlie", 35)
-        ));
+               new Person("Alice", 30),
+               new Person("Bob", 25),
+               new Person("Alice", 25),
+               new Person("Charlie", 35)
+       ));
        people.sort(new AgeComparator());
 
        assertEquals("Bob", people.get(0).getName());

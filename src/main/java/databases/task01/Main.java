@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/bdv", "postgres", "12345");
         try (TransactionService transactionService = new TransactionService(connection)) {
-            transactionService.transferMoney(1, 2, BigDecimal.valueOf(1000));
+            transactionService.transferMoney(1, 2, BigDecimal.valueOf(100));
         } catch (Exception exception) {
             log.error("Ошибка при транзакции", exception);
         }
