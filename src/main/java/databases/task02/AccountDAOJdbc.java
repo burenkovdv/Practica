@@ -23,15 +23,16 @@ public class AccountDAOJdbc implements AccountDAO {
 
     @Override
     public Account findById(int id) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("select * from accounts where id=?;");
-        preparedStatement.setInt(1, id);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        resultSet.next();
-        return Account.builder()
-                .id(id)
-                .ownerName(resultSet.getString("owner_name"))
-                .balance(resultSet.getBigDecimal("balance"))
-                .build();
+        try (PreparedStatement preparedStatement = connection.prepareStatement("select * from accounts where id=?;")) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return Account.builder()
+                    .id(id)
+                    .ownerName(resultSet.getString("owner_name"))
+                    .balance(resultSet.getBigDecimal("balance"))
+                    .build();
+        }
     }
 
     @Override
@@ -66,11 +67,10 @@ public class AccountDAOJdbc implements AccountDAO {
     @Override
     public void save(Account account) throws SQLException {
         String query =
-                "insert into accounts (id,owner_name,balance) values (?,?,?);";
+                "insert into accounts (owner_name,balance) values (?,?);";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setInt(1, account.getId());
-        preparedStatement.setString(2, account.getOwnerName());
-        preparedStatement.setBigDecimal(3, account.getBalance());
+        preparedStatement.setString(1, account.getOwnerName());
+        preparedStatement.setBigDecimal(2, account.getBalance());
         preparedStatement.executeUpdate();
 
     }

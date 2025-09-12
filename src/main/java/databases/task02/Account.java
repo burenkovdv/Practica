@@ -12,6 +12,17 @@ public class Account {
     private String ownerName;
     private BigDecimal balance;
 
+    public Account(String ownerName, BigDecimal balance) {
+        this.ownerName = ownerName;
+        this.balance = balance;
+    }
+
+    public Account(Integer id, String ownerName, BigDecimal balance) {
+        this.id = id;
+        this.ownerName = ownerName;
+        this.balance = balance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
