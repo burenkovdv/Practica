@@ -9,6 +9,8 @@ public class Order {
     private String product;
     private Integer amount;
 
+    public Order(){}
+
     public Order(Integer id, Integer userId, String product, Integer amount) {
         this.id = id;
         this.userId = userId;
